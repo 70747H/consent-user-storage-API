@@ -16,8 +16,8 @@ export class EventsService {
     return await this.eventRepository.save(createObject);
   }
 
-  findEvent = async (uid: string) => {
-    return this.eventRepository.findOneOrFail({ where: { uid }, relations: ['user'] });
+  findEvent = async (id: string) => {
+    return this.eventRepository.findOneOrFail({ where: { id }, relations: ['user'] });
   }
 
   listAllEvents = async (query: any, offset, limit, sort) => {
